@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewColor.layer.cornerRadius = 10
+        
         redValue.text = String(colorValue.redValue)
         greenValue.text = String(colorValue.greenValue)
         blueValue.text = String(colorValue.blueValue)
@@ -48,13 +50,13 @@ class ViewController: UIViewController {
     
     @IBAction func greenSliderAction() {
         colorValue.greenValue = greenSlider.value
-        greenValue.text = String(round(100 * colorValue.redValue) / 100)
+        greenValue.text = String(round(100 * colorValue.greenValue) / 100)
         viewColor.backgroundColor = .init(_colorLiteralRed: colorValue.redValue, green: colorValue.greenValue, blue: colorValue.blueValue, alpha: 1)
     }
 
     @IBAction func blueSliderAction() {
         colorValue.blueValue = blueSlider.value
-        blueValue.text = String(round(100 * colorValue.redValue) / 100)
+        blueValue.text = String(round(100 * colorValue.blueValue) / 100)
         viewColor.backgroundColor = .init(_colorLiteralRed: colorValue.redValue, green: colorValue.greenValue, blue: colorValue.blueValue, alpha: 1)
     }
 }
